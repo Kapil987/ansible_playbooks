@@ -1,0 +1,10 @@
+#/usr/ben/ansbile-play
+---
+- name: "Sample Playbook"
+  hosts: localhost
+  tasks:
+  - name: "This is to show playbook can be execute via like ./scripname by giving path"
+    debug:
+      msg: 
+      - "debug message"
+  

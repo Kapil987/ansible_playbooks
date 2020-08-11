@@ -1,0 +1,19 @@
+#!/usr/bin/ansible-playbook
+---
+- name: "Input output"
+  hosts: localhost
+  vars:
+    x: 45
+    my_name: "Kapil"
+  vars_prompt:
+    name: y
+    prompt: Enter the value for y
+    private: no # or take value as false
+  tasks:
+    - name: "Tasks for I/O"
+      debug:
+        msg: 
+        - "The value of x is: {{x}}"
+        - "The value of y is: {{y}}"
+        - "The value of my_name is: {{my_name}} "
+        

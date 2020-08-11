@@ -1,0 +1,10 @@
+---
+ - name: My Playbook name
+   hosts: localhost
+   tasks:
+   - debug:
+      msg: 
+       - "Message 1"
+       - "Message 2"
+#      msg: "test message"
+

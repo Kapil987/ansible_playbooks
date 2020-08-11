@@ -1,0 +1,10 @@
+---
+ - name: Simple play for variable
+   hosts: localhost
+   tasks:
+   - name: printing msg with parameter of debug module
+     debug:
+      msg:
+       - "Welcome"
+       - "Good Time"
+       - "Have Fun"

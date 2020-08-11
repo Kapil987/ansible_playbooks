@@ -1,0 +1,7 @@
+---
+ - hosts: localhost
+   tasks:
+   - debug:
+      msg: "Welcome to test debug message"
+#   - debug: msg="This is test debug message"
+      

@@ -1,0 +1,10 @@
+#!/usr/bin/ansible-playbook
+---
+- name: "Sample Playbook for verbosity"
+  hosts: localhost
+  tasks:
+  - name: "Task for verbosity"
+    debug:
+      msg: "msg for verbosity 2 use -vv to meet threshold"
+      verbosity: 2  # threshold can be anynumber
+

@@ -1,0 +1,9 @@
+#!/bin/ansible-playbook
+---
+  - name: name
+    hosts: localhost
+    tasks:
+    - name: printing a variable value using debug module
+      debug:
+        # msg: "The host name is: {{inventory_hostname}}"
+        var: inventory_hostname
