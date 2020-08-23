@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  tasks:
+  - debug:
+      msg:
+      - "Then x value is: {{x}}"
+      - "The y value is: {{y}}"
+
+# ansible-playbook 9.cmd_line_multi_args_pass.yml -e "{'x': 55, 'y': 345}"
+# ansible-playbook 9.cmd_line_multi_args_pass.yml -e "x=55 y=345"
+# ansible-playbook 9.cmd_line_multi_args_pass.yml -e "x=55 y=ansible playbook"
+# ansible-playbook 9.cmd_line_multi_args_pass.yml -e "x=55 y='ansible playbook'" # use quotes for string
+
+
+

@@ -1,0 +1,11 @@
+---
+- name: Installation of httpd
+  hosts: localhost
+  gather_facts: false
+  become: yes
+  tasks:
+  - name: working with httpd
+    yum:
+      name: httpd
+      state: present
+      

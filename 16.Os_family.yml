@@ -1,0 +1,37 @@
+# ansible-playbook 16.Os_family.yml --ask-become-pass
+# ansible-playbook -i ../inventory 16.Os_family.yml --ask-become-pass -vv
+# service apache2 status
+# service httpd status
+---
+- hosts: all # bu default looks for /etc/ansible/hosts unless we provide inventory file or edit ansible.cfg
+  gather_facts: true
+  # ansible_become_password:
+  tasks:
+  - name: installing httpd for Redhat OS Family
+    yum:
+      name: httpd
+      state: present
+    become: yes
+    when: ansible_os_family=="RedHat"
+  - name: Starting httpd for Redhat OS Family
+    service:
+      name: httpd
+      state: started
+    when: ansible_os_family=="RedHat"
+    become: yes
+
+  - name: installing apache2 for Debian OS Family
+    yum:
+      name: apache2
+      state: present
+    when: ansible_os_family=="Debian"
+    become: yes
+  - name: Starting httpd for Debian OS Family
+    service:
+      name: apache2
+      state: started
+    when: ansible_os_family=="Debian"
+    become: yes
+
+  - debug:
+     msg: "Successfully completed all Tasks"

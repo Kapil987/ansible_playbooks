@@ -1,0 +1,18 @@
+---
+- hosts: localhost
+  gather_facts: false
+  tasks:
+    - command: "ls /home/ansadmin/ans_workspace/playbooks"
+      register: ouput
+    - debug: var=ouput    # to display information on the shell
+      # ignore_errors: yes
+    - command: "ls /abc"  # Task going to fail
+      register: abc
+      ignore_errors: yes
+    - debug: var=abc
+    - command: "ls /home/ansadmin"
+      register: ansadmin
+    - debug: var=ansadmin
+      # ignore_errors: yes
+
+    #  we are repeating "ignore_errors: yes" here multiple times, the better way is to use block in these cases

@@ -1,0 +1,11 @@
+---
+  x: 45
+  y:
+  - 4
+  - 65
+  - "ansible"
+
+# ansible-playbook 9.cmd_line_multi_args_pass.yml -e  "@10.cmd_line_file.yml"
+# ansible-playbook 8.cmd_line_pass_one_args.yml -e  "@10.cmd_line_file.yml"
+# ansible-playbook 9.cmd_line_multi_args_pass.yml -e  "@11.cmd_var_file.json"
+# ansible-playbook 8.cmd_line_pass_one_args.yml -e  "@11.cmd_var_file.json"

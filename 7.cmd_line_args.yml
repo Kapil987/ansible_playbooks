@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  vars:
+    # x: 45 # comment uncomment this line and see the difference
+  gather_facts: false
+  tasks:
+  - debug: var=x

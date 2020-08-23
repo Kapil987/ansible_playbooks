@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  gather_facts: false
+  tasks:
+  - debug: var=x
+      # msg: "var {{y}}"
+
+# ansible-playbook 8.cmd_line_pass_args.yml -e "x=100" # passing variable in command line
+# ansible-playbook 8.cmd_line_pass_args.yml -e "{'x':600}"
+# ansible-playbook 8.cmd_line_pass_args.yml --extra-var "x=44"
+# ansible-playbook 8.cmd_line_pass_one_args.yml -e "{'x' : [3,5,10,6]}"
+# ansible-playbook 8.cmd_line_pass_one_args.yml -e "{'x' : { 'one' : 1, 'two' : 2}}"
+
+
+
+
