@@ -16,7 +16,7 @@
 	"Ansible gather facts module": {
 		"prefix": "ga",
 		"body": [
-			"gather_facts: $1"
+			"gather_facts: false"
 		],
 		"description": "Ansible gather facts module"
 	},
@@ -52,19 +52,49 @@
 		"description": "Ansible multi message module"
 	},
 	"Ansible var": {
-		"prefix": "va",
+		"prefix": [
+			"va",
+			"var"
+		],
 		"body": [
-		  "var: $1"
+			"vars: "
 		],
 		"description": "Ansible var"
-	  },
-	  "Ansible inventory": {
+	},
+	"Ansible vars_promt": {
+		"prefix": [ "vp"],
+		"body": [
+			"vars_prompt: "
+		],
+		"description": "Ansible var"
+	},
+	"Ansible inventory": {
 		"prefix": "inven",
 		"body": [
-		  "inventory_hostname"
+			"inventory_hostname"
 		],
 		"description": "Ansible inventory"
-	  },
+	},
+	"Ansible hostvars": {
+		"prefix": [
+			"hv",
+			"var=hv"
+		],
+		"body": [
+			"hostvars[inventory_hostname].ansible_host"
+		],
+		"description": "Ansible hostvars"
+	},
+
+// https://scotch.io/bar-talk/write-less-code-by-creating-snippets-in-visual-studio-code
+	"Ansible state": {
+		"prefix": ["st", "sta"],
+		"body": [
+			"state: ${1|present,absent,touch,enabled,latest|}",
+		],
+		"description": "Ansible state"
+	},
+	
 	"Ansible Simple Template": {
 		"prefix": "ast",
 		"body": [
