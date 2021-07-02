@@ -8,7 +8,7 @@
   vars_prompt:
     name: y
     prompt: Enter the value for y
-    private: no # or take value as false
+    private: no # or take value as false, yes for encryption like credentials
   tasks:
     - name: "Tasks for I/O"
       debug:

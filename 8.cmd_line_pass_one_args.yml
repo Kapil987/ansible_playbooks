@@ -3,7 +3,7 @@
   gather_facts: false
   tasks:
   - debug: var=x
-      # msg: "var {{y}}"
+      # msg: "var {{y}}" this is wrong format write as multi message format
 
 # ansible-playbook 8.cmd_line_pass_args.yml -e "x=100" # passing variable in command line
 # ansible-playbook 8.cmd_line_pass_args.yml -e "{'x':600}"

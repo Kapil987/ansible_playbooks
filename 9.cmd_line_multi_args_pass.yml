@@ -10,6 +10,7 @@
 # ansible-playbook 9.cmd_line_multi_args_pass.yml -e "x=55 y=345"
 # ansible-playbook 9.cmd_line_multi_args_pass.yml -e "x=55 y=ansible playbook"
 # ansible-playbook 9.cmd_line_multi_args_pass.yml -e "x=55 y='ansible playbook'" # use quotes for string
+# FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'x' is undefined, will come when supplying cmd argument as file without @
 
 
 
