@@ -30,8 +30,10 @@
       - php
       - php-mysql
       state: present
+
   
   - name: Copying php files in /var/www/html
     copy:
       src: /root/inventory/index.php
       dest: /var/www/html/index.php
+  

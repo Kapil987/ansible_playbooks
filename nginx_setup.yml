@@ -1,0 +1,24 @@
+- name: NGINX installation on localhost
+  hosts: localhost
+  tasks:
+  - name: Installing NGINX
+    yum:
+      name: nginx
+      state: present
+    delegate_to: localhost
+  - name: Copying php files in /etc/nginx/
+    copy:
+      src: /root/inventory/nginx.conf
+      dest: /etc/nginx/
+  - name: Starting nginx service
+    service:
+      name: nginx
+      state: started
+    delegate_to: localhost
+  
+
+  # - name: Configuring /etc/nginx/nginx.conf
+  #   shell:
+  #     cmd: ls -l "/etc/nginx/nginx.conf"
+  #   delegate_to: localhost
+  
