@@ -1,0 +1,37 @@
+- name: Installing lamp stack
+  hosts: wb
+  tasks:
+  
+  - name: Installing Apache
+    yum:
+      name: httpd
+      state: present
+  
+  - name: Starting httpd service
+    service:
+      name: httpd
+      enabled: yes # to enalbe at startup
+      state: started
+  
+  - name: Install MYSQL db
+    yum:
+      name: 
+      - mariadb-server
+      state: present
+  - name: Starting mariadb service
+    service:
+      name: mariadb
+      enabled: yes # to enalbe at startup
+      state: started
+  
+  - name: Installing PHP
+    yum:
+      name: 
+      - php
+      - php-mysql
+      state: present
+  
+  - name: Copying php files in /var/www/html
+    copy:
+      src: /root/inventory/index.php
+      dest: /var/www/html/index.php
